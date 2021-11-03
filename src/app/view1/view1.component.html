@@ -1,0 +1,38 @@
+<h4 class="title">店家列表</h4>
+<button igxButton="raised" igxButtonColor="var(--igx-surface-500)" igxButtonBackground="var(--igx-error-500)" [disabled]="false" [igxToggleAction]="dialogWindow" class="button">
+  <igx-icon>add</igx-icon>
+  <span>建立店家</span>
+</button>
+<igx-grid [data]="dataSource1StoreTable1" [autoGenerate]="false" width="1300px" height="434px" displayDensity="cosy" primaryKey="店家編號" class="grid">
+  <igx-column field="店家名稱" header="店家名稱" title="店家名稱" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="店家地址" header="店家地址" title="店家地址" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="店家案號" header="店家案號" title="店家案號" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="店家編號" header="店家編號" title="店家編號" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="加入日期" header="加入日期" title="加入日期" dataType="date" [sortable]="true"></igx-column>
+  <igx-column field="到期時間" header="到期時間" title="到期時間" dataType="date" [sortable]="true"></igx-column>
+  <igx-column field="到期" header="到期" title="到期" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="關閉" header="關閉" title="關閉" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="Gateway" header="Gateway" title="Gateway" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="車子" header="車子" title="車子" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="所屬業務" header="所屬業務" title="所屬業務" dataType="string" [sortable]="true"></igx-column>
+</igx-grid>
+<button igxButton="outlined" igxButtonColor="var(--igx-grays-900)" igxButtonBackground="transparent" [disabled]="false" [igxToggleAction]="dialogWindow" class="button_1">
+  <span>刪除</span>
+</button>
+<igx-dialog [closeOnOutsideSelect]="true" [closeOnEscape]="true" #dialogWindow class="dialog-window">
+  <igx-dialog-title>建立新店家</igx-dialog-title>
+  <div igxDialogActions>
+    <button igxButton="flat" [disabled]="false" class="button_2">
+      <span>確認</span>
+    </button>
+  </div>
+  <div>
+    <p class="text_1">店家名稱</p>
+  </div>
+</igx-dialog>
+<p class="text">全部10|快到期2|已到期4</p>
+<iab-navdrawer-item [isHeader]="false" routerLink="/view2" class="nav-item">
+  <igx-icon font="material" [active]="true" class="icon_1">people</igx-icon>
+  <p class="text_1">Drop components here</p>
+</iab-navdrawer-item>
+<igx-icon font="material" [active]="true" class="icon">find_replace</igx-icon>
