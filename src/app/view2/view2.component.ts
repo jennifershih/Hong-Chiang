@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-view2',
   templateUrl: './view2.component.html',
-  styleUrls: ['./view2.component.scss']
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrls: ['./view2.component.scss'],
 })
-export class View2Component {
-}
+export class View2Component {}

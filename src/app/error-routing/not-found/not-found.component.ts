@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  template: '<h2>Error 404: Page not found</h2>'
+  standalone: false,
+  selector: 'app-page-not-found',
+  changeDetection: ChangeDetectionStrategy.Eager,
+  template: '<h2>Error 404: Page not found</h2>',
 })
-export class PageNotFoundComponent { }
+export class PageNotFoundComponent {}

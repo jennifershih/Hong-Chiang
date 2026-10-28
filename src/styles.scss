@@ -1,33 +1,46 @@
+/* Line added via automated migrations. */
+@use "igniteui-angular/theming" as *;
+// Specifies large size for all components to match the previous defaults
+// This may not be needed for your project. Please consult https://www.infragistics.com/products/ignite-ui-angular/angular/components/general/update-guide for more details.
+:root {
+  --ig-size: var(--ig-size-large);
+}
 /* You can add global styles to this file, and also import other style files */
 // Standard CSS normalize, comment out if not required or using a different module
-@import "~minireset.css/minireset";
+@import "minireset.css/minireset";
 
-
-html, body {
+html,
+body {
   height: 100%;
 }
 
-@import '~igniteui-angular/lib/core/styles/themes/index';
+@include core();
+@include typography($font-family: "Open Sans", $type-scale: $fluent-type-scale);
 
-@include igx-core();
-@include igx-typography($font-family: "Open Sans", $type-scale: $fluent-type-scale);
-
-$custom-palette: igx-palette(
+$custom-palette: palette(
   $primary: #2b579a,
   $secondary: #2b579a,
   $error: #a80000,
   $success: #107c10,
   $warn: #797673,
-  $variant: 'fluent');
-@include igx-theme($palette: $custom-palette, $schema: $light-fluent-schema);
+  $variant: "fluent",
+  $surface: #fff,
+);
+@include theme($palette: $custom-palette, $schema: $light-fluent-schema);
 
 body {
-  background: var(--igx-surface-500);
-  color: var(--igx-surface-500-contrast);
+  background: var(--ig-surface-500);
+  color: var(--ig-surface-500-contrast);
 }
 
-.igx-typography {
-  h1, h2, h3, h4, h5, h6, p {
+.ig-typography {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
     margin: 0;
   }
 }

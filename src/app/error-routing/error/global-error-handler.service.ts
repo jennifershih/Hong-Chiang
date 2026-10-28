@@ -1,10 +1,16 @@
-import { ErrorHandler, Injectable, Injector, NgZone } from '@angular/core';
+import {
+  ErrorHandler,
+  Injectable,
+  Injector,
+  NgZone,
+  inject,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable()
 export class GlobalErrorHandlerService implements ErrorHandler {
-
-  constructor(private injector: Injector, private zone: NgZone) { }
+  private injector = inject(Injector);
+  private zone = inject(NgZone);
 
   handleError(error: any) {
     // handle and/or log error, for example:
@@ -14,9 +20,7 @@ export class GlobalErrorHandlerService implements ErrorHandler {
     const router = this.injector.get(Router);
     if (router) {
       this.zone.run(() => {
-        router
-          .navigate(['error'])
-          .catch((err: any) => console.error(err));
+        router.navigate(['error']).catch((err: any) => console.error(err));
       });
     }
   }

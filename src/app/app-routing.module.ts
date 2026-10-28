@@ -14,12 +14,11 @@ export const routes: Routes = [
   { path: 'view1', component: View1Component, data: { text: 'View 1' } },
   { path: 'view2', component: View2Component, data: { text: 'View 2' } },
   { path: 'view3', component: View3Component, data: { text: 'View 3' } },
-  { path: '**', component: PageNotFoundComponent } // must always be last
+  { path: '**', component: PageNotFoundComponent }, // must always be last
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes), ErrorRoutingModule],
-  exports: [RouterModule, ErrorRoutingModule]
+  exports: [RouterModule, ErrorRoutingModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

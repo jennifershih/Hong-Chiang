@@ -8,14 +8,14 @@ const providers: Provider[] = [];
 
 if (environment.production) {
   // register prod error handler
-  providers.push({ provide: ErrorHandler, useClass: GlobalErrorHandlerService });
+  providers.push({
+    provide: ErrorHandler,
+    useClass: GlobalErrorHandlerService,
+  });
 }
 
 @NgModule({
-  declarations: [
-    PageNotFoundComponent,
-    UncaughtErrorComponent
-  ],
-  providers
+  declarations: [PageNotFoundComponent, UncaughtErrorComponent],
+  providers,
 })
-export class ErrorRoutingModule { }
+export class ErrorRoutingModule {}
